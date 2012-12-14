@@ -1,0 +1,12 @@
+<% provide(:page_header, 'Log into Webmarks') %>
+<%= form_for(:session, url: sessions_path) do |f| %>
+    
+    <%= f.label  :username %>
+    <%= f.text_field  :username %>
+    <br />
+    <%= f.label  :password %>
+    <%= f.password_field  :password %>
+    <br />
+    <%= f.submit "Log In" %>
+  
+<% end %>

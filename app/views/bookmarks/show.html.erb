@@ -1,0 +1,26 @@
+<% provide(:title, 'webmarks - Webmark Details') %>
+<% provide(:page_header, @bookmark.name) %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Added By:</b>
+  <%= @bookmark.username %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @bookmark.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @bookmark.url %>
+</p>
+
+<p>
+  <b>Date saved:</b>
+  <%= @bookmark.date_saved %>
+</p>
+
+<%= link_to 'Back', root_path %>

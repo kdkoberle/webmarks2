@@ -1,0 +1,18 @@
+<% provide(:title, 'webmarks - Profile') %>
+<% provide(:page_header, 'Viewing Profile: ' + @user.username) %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3>User Profile</h3>
+  <b>Name:</b>
+  <%= @user.fullname %>
+  <br />
+  <b>Email Adress:</b>
+  <%= @user.email %>
+  <br />
+</p>
+
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>

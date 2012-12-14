@@ -1,0 +1,15 @@
+<div id="menu">
+  <ul>
+  <% if logged_in? %>
+    <li class="current_page_item"><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Add", add_path %></li>
+    <li><%= link_to "Explore", view_path %></li>
+    <li><%= link_to "Log Out", logout_path %></li>
+  <% else %>
+    <li><%= link_to "Sign Up", signup_path %></li>
+    <li><%= link_to "Help", '#' %></li>
+    <li><%= text_field_tag(:q) %> </li>
+    <li><%= submit_tag("Search") %></li>
+  <% end %>
+  </ul>
+</div>

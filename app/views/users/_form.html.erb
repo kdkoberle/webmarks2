@@ -1,0 +1,29 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+  
+  <%= f.label :fullname, "Fullname" %>
+  <%= f.text_field :fullname %>
+  <br />
+  <br />
+  <%= f.label :email, "Email" %>
+  <%= f.text_field :email %>
+  <br />
+  <br />
+  <% if !logged_in? %>
+    <%= f.label :username, "Username" %>
+    <%= f.text_field :username %>
+  <% end %>
+  <br />
+  <br />
+  <br />
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br />
+  <br />
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+  <br />
+  <br />
+  <%= f.submit form_text %>
+
+<% end %>

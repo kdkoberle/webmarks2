@@ -1,0 +1,10 @@
+<% provide(:title, 'webmarks - Home') %>
+
+
+
+<% if logged_in? %>
+  <% provide(:page_header, 'webmarks') %>
+  <p>Welcome to <strong>webmarks</strong>, a place to share the cool-spots of the web.</p>
+<% else %>
+  <%= render 'login' %>
+<% end %>

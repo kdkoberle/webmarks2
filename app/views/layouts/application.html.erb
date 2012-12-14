@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><%= yield(:title) %></title>
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper" class="container">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><%= link_to "Webmarks", root_path %></h1>
+		</div>
+		<%= render 'layouts/nav_menu' %>
+	</div>
+	<div><%= link_to image_tag("img03.png", alt: "") %></div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="content">
+			<div class="post">
+                                
+				<h2 class="title"><%= yield(:page_header) %></h2>
+				<div style="clear: both;">&nbsp;</div>
+				<div class="entry">
+                                  <% flash.each do |key, value| %>
+                                    <div class="alert alert-<%= key %>"><%= value %></div>
+                                    <br />
+                                  <% end %>
+				  <%= yield %>
+				</div>
+			</div>
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		
+		
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<div class="container"><%= link_to image_tag("img03.png", alt: "") %></div>
+	<!-- end #page -->
+</div>
+<div id="footer-content"></div>
+<div id="footer">
+	<p>Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>
+
+
